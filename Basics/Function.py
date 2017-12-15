@@ -21,6 +21,9 @@ bool(0)
 #数据类型检查函数
 isinstance(12,int)
 
+#把list变为索引-元素对
+enumerate([1,2,3,4,5])
+
 #定义函数
 def first_fun(x):
     print(x)

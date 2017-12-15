@@ -18,6 +18,11 @@ dictionary[c] = 'f'
 boolean = c in dictionary
 boolean = dictionary.get(c,False)
 
+#获取键/值/键值对列表
+flag = dictionary.keys()
+flag = dictionary.values()
+flag = dictionary.items()
+
 #set key集合 不可存入可变对象 自动过滤重复对象
 s = set([(1,'a'),('b',2),('c',3)])
 
