@@ -38,8 +38,6 @@ l = list(filter(only_int,l))
 #sorted 排序
 sorted(l)
 
-sorted(l,reverse=True)
-
-sorted(l,key=abs)
+sorted(l,key=abs，reverse=True)
 
 sorted(cmp=None)
