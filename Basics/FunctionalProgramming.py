@@ -36,8 +36,8 @@ def only_int(x):
 l = list(filter(only_int,l))
 
 #sorted 排序
-sorted(l)
+sorted(l, key=abs, reverse=False)
 
-sorted(l,key=abs，reverse=True)
+sorted(l, reverse = False)
 
 sorted(cmp=None)
