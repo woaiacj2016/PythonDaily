@@ -2,6 +2,8 @@
 函数式编程
 '''
 from functools import reduce 
+from functools import wraps
+import datetime
 
 #高阶函数(Higher-order function)
 
@@ -40,4 +42,41 @@ sorted(l, key=abs, reverse=False)
 
 sorted(l, reverse = False)
 
-sorted(cmp=None)
+#返回函数
+def return_fun(arg):
+    if arg == 1:
+        return type
+    if arg == 2:
+        return abs
+    else:
+        return str
+
+#闭包
+def numtostr():
+    arr = range(5)
+    def loop():
+        for i in arr:
+            print(i)
+    return loop
+
+#匿名函数 lambda 参数：表达式 只能又一个表达式，返回值就是表达式结果
+anonymity = lambda x:x*x
+print(anonymity(2))
+
+#装饰器-在代码运行期间动态增加功能
+def log(fun):
+    @wraps(fun) #复制原始函数属性
+    def wrapper(*arg,**keyarg):
+        print('name:%s,time:%s'%(fun.__name__,datetime.datetime.now()))
+    return wrapper
+
+@log
+def test():
+    print('test')
+
+#偏函数，固定函数参数 接受函数对象/*args/**kw三个参数
+import functools
+inttwo = functools.partial(int,base=2)
+print(inttwo('100'))
+
+test()
