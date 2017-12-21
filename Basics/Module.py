@@ -8,7 +8,7 @@
 
 import sys
 arg = sys.argv
-print('参数:%s'%arg)
+print('参数:%s' % arg)
 
 #入口模块的__name__会被置为__main__
 if __name__ == '__main__':
