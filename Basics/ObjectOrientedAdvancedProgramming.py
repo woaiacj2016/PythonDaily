@@ -111,6 +111,32 @@ class Student(object):
         if attr == 'score':
             return 99
 
+    def __call__(self):
+        print('调用实例')
+
 
 for x in Student():
     print(x)
+
+#使用枚举类
+
+from enum import Enum, unique
+
+Num = Enum('Num',('One','Two','Three'))
+
+#unique装饰器帮助检查没有重复值
+@unique
+class Num(Enum):
+    One = 1
+    Two = 2
+    Three = 3
+
+#使用元类
+
+#s使用type创建新的类型 参数 1.class的名称 2.继承的父类集合 3.方法名称余函数绑定
+def test(self,status='success'):
+    print('Test,%s'%status)
+
+Test = type('Type',(object,),dict(test = test))
+
+#metaclass 从type类型拍成，接受四个参数，准备创建的类的对象，类的名字，类继承的父类集合，类的方法集合
