@@ -33,3 +33,28 @@ import pdb
 
 #设置断点 命令 c 继续运行
 pdb.set_trace()
+
+#单元测试--- 测试驱动开发(TDD:Test-Driven Development)
+
+#引入unittest模块
+import unittest
+
+#编写测试类，从unittest.TestCase 继承，以test开头的方法是测试方法，否则测试时不会执行
+class MyTest(unittest.TestCase):
+
+    def test_my(self):
+        d = dict(my='zz')
+        self.assertEqual(d.my,'zz')
+    #setUp和tearDown,在每个测试方法前后执行
+    def setUp(self):
+        print('test start')
+    def tearDown(self):
+        print('test end')
+
+#运行单元测试在结尾加上代码，或者通过参数 -m unitteset 运行单元测试
+if __name__ == '__main__'
+    unittest.main()
+
+
+
+
