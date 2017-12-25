@@ -52,8 +52,24 @@ class MyTest(unittest.TestCase):
         print('test end')
 
 #运行单元测试在结尾加上代码，或者通过参数 -m unitteset 运行单元测试
-if __name__ == '__main__'
+if __name__ == '__main__':
     unittest.main()
+
+#文档测试-Python内置的文档测试模块可以直接提取只是中的代码并执行测试
+
+class DocTest(dict):
+    '''
+    Simple dict.
+
+    >>> d = DocTest()
+    >>> d['x'] = 100
+    >>> d.x
+    100
+    >>> d['y']
+    Traceback (most recent call last):
+      ...
+    keyError: 'y'
+    '''
 
 
 
